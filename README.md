@@ -1,11 +1,11 @@
-# Engineering and Evaluating Artificial Intelligence — Multi-Label Email Classifier
+# Engineering and Evaluating Artificial Intelligence - Multi-Label Email Classifier
 
 ## 📌 Overview
 
 This project implements a **modular, multi-label email classification system** for a multinational company's customer support tickets. It classifies support emails into hierarchical categories (Type 2 → Type 3 → Type 4) using a **Chained Multi-Output Classification** architecture built on software engineering best practices.
 
-> **Course:** Engineering and Evaluating Artificial Intelligence (MSCAI1) — National College of Ireland  
-> **Assessment:** Continuous Assessment 1 — Design Choice 1: Chained Multi-Outputs
+> **Course:** Engineering and Evaluating Artificial Intelligence (MSCAI1) - National College of Ireland  
+> **Assessment:** Continuous Assessment 1 - Design Choice 1: Chained Multi-Outputs
 
 ---
 
@@ -15,12 +15,12 @@ The company receives customer support emails (from AppGallery and Purchasing dom
 
 | Level | Column | Example |
 |-------|--------|---------|
-| Type 1 | `y1` | Business group (AppGallery / Purchasing) — used for grouping, not classification |
+| Type 1 | `y1` | Business group (AppGallery / Purchasing) - used for grouping, not classification |
 | Type 2 | `y2` | Suggestion, Complaint, etc. |
 | Type 3 | `y3` | Payment, Refund, etc. |
 | Type 4 | `y4` | Subscription cancellation, etc. |
 
-**The challenge:** Labels are hierarchically dependent — if Type 2 is predicted incorrectly, Types 3 and 4 are automatically wrong regardless of their individual prediction. A simple multi-class approach (classifying each type independently) fails to capture these dependencies.
+**The challenge:** Labels are hierarchically dependent - if Type 2 is predicted incorrectly, Types 3 and 4 are automatically wrong regardless of their individual prediction. A simple multi-class approach (classifying each type independently) fails to capture these dependencies.
 
 ---
 
@@ -69,14 +69,14 @@ The `Data` class (`modelling/data_model.py`) encapsulates all input data (train/
 ```
 Engineering_And_Evaulating_Artificial_Intelligence/
 │
-├── main.py                  # Entry point — orchestrates the full pipeline
+├── main.py                  # Entry point - orchestrates the full pipeline
 ├── Config.py                # Shared configuration (column names, chained columns)
 ├── preprocess.py            # Data loading, deduplication, noise removal, translation
 ├── embeddings.py            # TF-IDF vectorization of text data
 │
 ├── modelling/
-│   ├── data_model.py        # Data class — encapsulates train/test splits
-│   └── modelling.py         # Model orchestration — trains and evaluates models
+│   ├── data_model.py        # Data class - encapsulates train/test splits
+│   └── modelling.py         # Model orchestration - trains and evaluates models
 │
 ├── model/
 │   ├── __init__.py
@@ -84,8 +84,8 @@ Engineering_And_Evaulating_Artificial_Intelligence/
 │   └── randomforest.py      # Random Forest classifier implementation
 │
 └── data/
-    ├── AppGallery.csv        # Support tickets — AppGallery domain
-    └── Purchasing.csv        # Support tickets — Purchasing domain
+    ├── AppGallery.csv        # Support tickets - AppGallery domain
+    └── Purchasing.csv        # Support tickets - Purchasing domain
 ```
 
 ---
@@ -154,16 +154,4 @@ RandomForest
 ...
 ```
 
----
 
-## 👥 Team
-
-- **Course:** MSc in Artificial Intelligence, National College of Ireland
-- **Module:** Engineering and Evaluating Artificial Intelligence
-- **Instructors:** Dr Abdul Razzaq, Dr Abdul Shahid, Sallar Khan
-
----
-
-## 📄 License
-
-This project is part of academic coursework at the National College of Ireland. All rights reserved.
